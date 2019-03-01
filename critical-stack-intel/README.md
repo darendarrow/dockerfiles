@@ -1,3 +1,6 @@
+# Example usage
+
+## client help
 ```bash
 docker run darendarrow/critical-stack-intel-client:0.0.4 /sbin/my_init --skip-startup-files --quiet -- /usr/bin/critical-stack-intel --api-key=XXXXX --help
 usage: critical-stack-intel [<flags>] <command> [<flags>] [<args> ...]
@@ -38,4 +41,27 @@ Commands:
 
   white-list [<flags>]
     White list configuration management.
+```
+
+## List feeds
+```bash
+docker run darendarrow/critical-stack-intel-client:0.0.4 /sbin/my_init --skip-startup-files --quiet -- /usr/bin/critical-stack-intel --api-key=XXXXX list
+critical-stack 19:10:28 [INFO] Pulling feed list from the Intel Marketplace.
+
+   ID  |                           NAME                            | LAST UPDATED | INDICATOR COUNT
++------+-----------------------------------------------------------+--------------+-----------------+
+  153  | threatcrowd.org-Community-rated-IP-Blocklist              | -            | 0
+  133  | shodan.io-Remote-Access-Trojan-(RAT)-Controllers          | -            | 0
+  94   | snort.org-IP-Blacklist                                    | -            | 0
+  59   | ET:-Botnet-Command-and-Control                            | -            | 0
+  25   | ET:-Known-Compromised-Hosts                               | -            | 0
+  23   | Malware-Domains                                           | -            | 0
+  18   | PhishTank-Intel-Feed-(Verified)                           | -            | 0
++------+-----------------------------------------------------------+--------------+-----------------+
+                                                                        TOTAL     |        0
+                                                                   +--------------+-----------------+
+<feed-name> = Not Fetched Yet
+<feed-name> = On Disk
+** = Update Available
+`LAST UPDATED` Column = Server time last updated - not local time.
 ```
